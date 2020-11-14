@@ -25,9 +25,9 @@ for (int k=0; k<iter; k++) {
        printf("%s     ",data[k]->source);
        gotoxy(70,count+3);
        printf("%s     ",data[k]->destination);
-       gotoxy(85,count+3);
+       gotoxy(92,count+3);
        printf("%s     ",data[k]->dept_time);
-       gotoxy(100,count+3);
+       gotoxy(106,count+3);
        printf("%s     ",data[k]->arr_time);
        printf("\n\n");
 
@@ -47,8 +47,6 @@ SetConsoleCursorPosition(h,position);
 
 void headings(){
 
-	//int count = 2;
-
 	gotoxy(1,2);
        printf("SL NO");
        gotoxy(14,2);
@@ -61,12 +59,9 @@ void headings(){
        printf("DESTINATION");
        gotoxy(83,2);
        printf("DEPARTURE TIME");
-       gotoxy(100,2);
+       gotoxy(99,2);
        printf("ARRIVAL TIME");
        gotoxy(1,3);
        printf("-----------------------------------------------------------------------------------------------------------------");
-
-
-       //count = count+5;
 
 }

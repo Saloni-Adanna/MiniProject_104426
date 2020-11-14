@@ -5,7 +5,6 @@ void show_menu(){
 	
 	do{
 
-	//gotoxy(36,1);
 	printf("\n -----------------------------WELOCME TO TRAIN INFORMATION SYSTEM --------------------------\n\n                     SELECT ANY OF THE BELOW MENU FOR FURTHER INFORMATION        \n");
 	printf ("\n 1. ALL TRAINS            2.TRAIN LISTING               3. TRAIN SEARCH       ANY KEY TO EXIT\n");
 	scanf(" %c", &menu_num);
@@ -21,7 +20,6 @@ void show_menu(){
 					 
 					 break;
 			case '2':option = train_listing();
-					 
 					 break;
 			case '3':option = train_search();
 					 break;
@@ -41,11 +39,23 @@ char train_listing(){
 	char num2, back;
 
 	do{
+	gotoxy(36,10);
+	printf("TRAIN LISTING");
+	gotoxy(36,12);
+	printf("-------------");
+	gotoxy(36,14);
+	printf("1. TRAIN NAME-ALPHABETICAL");
+	gotoxy(36,16);
+	printf("2. ARRIVAL TIMING");
+	gotoxy(36,18);
+	printf("3. DEPARTURE TIMING");
+	gotoxy(36,20);
+	printf("4. SOURCE-ALPHABETICAL");
+	gotoxy(36,22);
+	printf("5. DESTINATION-ALPHABETICAL");
 
-	printf(" TRAIN LISTING");
-	printf("\n -------------");
-	printf("\n 1. TRAIN NAME-ALPHABETICAL \n 2. ARRIVAL TIMING\n 3. DEPARTURE TIMING\n 4. SOURCE-ALPHABETICAL \n 5. DESTINATION-ALPHABETICAL \n ");
-	printf("\n Select the choice: ");
+	gotoxy(38,24);
+	printf(" Select the choice: ");
 	scanf(" %c", &num2);
 
 		switch(num2){
@@ -107,14 +117,24 @@ char train_search(){
 	
 	do{
 
-	printf(" TRAIN SEARCH");
-	printf("\n -------------");
-	printf("\n 1.Train Name\n 2.Source\n 3.destination\n");
-	printf("\nSelect the choice:");
+	gotoxy(40,10);
+	printf("TRAIN SEARCH");
+	gotoxy(40,12);
+	printf("-------------");
+	gotoxy(40,14);
+	printf("1. Train Name ");
+	gotoxy(40,16);
+	printf("2. Source");
+	gotoxy(40,18);
+	printf("3. destination");
+
+	gotoxy(40,20);
+	printf("Select the choice:");
 	scanf(" %c", &num3);
 
 		switch(num3){
-			case '1': printf( "\nEnter train name :");
+			case '1': gotoxy(40,22);
+					  printf( "Enter train name (CAPITAL):");
 
 					  search(1);
 
@@ -123,7 +143,7 @@ char train_search(){
 
 					  system("cls");
 					break;
-			case '2': printf( "\n Enter the source: ");
+			case '2': printf( "\n Enter the source (CAPITAL): ");
 
 					  search(2);
 
@@ -132,7 +152,7 @@ char train_search(){
 
 					  system("cls");
 					break;
-			case '3': printf( "\n Enter the destination: ");
+			case '3': printf( "\n Enter the destination (CAPITAL): ");
 
 					  search(3);
 

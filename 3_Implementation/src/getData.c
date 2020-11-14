@@ -11,16 +11,14 @@ void getTrainData(){
 
     train *temp; 
 	filehandle = fopen("data/Train_db.txt","r");
-    //printf("FILE OPENED");
 
 	while (fgets(lyne,200,filehandle)) {
-                //printf("%s\n",lyne);
 
                 temp = (train*) calloc(1, sizeof(train));
 
                 item = strtok(lyne,",");
                 temp->sl_no = atof(item);
-            //temp->sl no   
+   
                 item = strtok(NULL,",");
                 temp->train_number = atof(item);
 
@@ -31,7 +29,6 @@ void getTrainData(){
                 strcpy(temp->source,item);
 
                 item = strtok(NULL,",");
-                //printf("%s\n",item);
                 strcpy(temp->destination, item);
 
                 item = strtok(NULL,",");
@@ -45,7 +42,6 @@ void getTrainData(){
                 train_data[train_count]= temp;
 
                 train_count++;
-                //printf("RECORD COUNT %d", train_count);
     }
                 
     train_data[train_count] = '\0';
@@ -53,7 +49,6 @@ void getTrainData(){
     
 
     for (int k=0; k<train_count; k++) {
-        //t_array[k]= &train_data[k];
         t_array[k]= train_data[k];
     }        
 
